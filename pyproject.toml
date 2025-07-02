@@ -1,0 +1,12 @@
+[project]
+name = "hlbfx-project"
+version = "0.1.0"
+description = "cli tool for managing HL projects"
+authors = [{name = "Vijay", email = "vm11@sanger.ac.uk"}]
+dependencies = [
+    "fire",
+]
+
+[project.scripts]
+hlbfx-projects = "hlbfx_project.cli:main"
+

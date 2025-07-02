@@ -1,0 +1,66 @@
+#!/bin/bash
+
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <project_name>"
+  exit 1
+fi
+
+
+project_name=$1; shift
+
+
+BACKUP_BASE=/nfs/team298/projects
+backup_dir=$BACKUP_BASE/$project_name
+
+NOBACKUP_BASE=/lustre/scratch126/cellgen/haniffa/projects
+nobackup_dir=$NOBACKUP_BASE/$project_name
+
+USER_DIR=/nfs/team298/$USER/projects
+user_dir=$USER_DIR/$project_name
+
+backup_dir_present=0
+if [ -d "$backup_dir" ]; then
+  echo "Directory $backup_dir already exists. Please choose a different name."
+  backup_dir_present=1
+fi
+
+nobackup_dir_present=0
+if [ -d "$nobackup_dir" ]; then
+  echo "Directory $nobackup_dir already exists. Please choose a different name."
+  nobackup_dir_present=1
+fi
+user_dir_present=0
+if [ -d "$user_dir" ]; then
+  echo "Directory $user_dir already exists. Please choose a different name."
+  user_dir_present=1
+fi
+
+if [ $backup_dir_present -eq 1 ] || [ $nobackup_dir_present -eq 1 ] || [ $user_dir_present -eq 1 ]; then
+  echo "Project creation aborted due to existing directories."
+  mkdir -p $user_dir 
+fi
+
+
+# Create the backup and nobackup directories
+mkdir -p $backup_dir
+mkdir -p $nobackup_dir
+mkdir -p $user_dir
+
+# Create the project directory structure
+mkdir -p $user_dir/{codes/$USER,freeze,envs/$USER,intermediate_data}
+mkdir -p $backup_dir/{freeze_data,freeze_codes,results}
+mkdir -p $nobackup_dir/{nobackup_data,nobackup_output,tmp}
+touch $backup_dir/README.md
+
+# Create softlinks
+ln -s $backup_dir/{freeze_data,freeze_codes} $user_dir/freeze/
+ln -s $backup_dir/results/ $user_dir/results
+ln -s $nobackup_dir/{nobackup_data,nobackup_output} $user_dir/intermediate_data
+ln -s $nobackup_dir/tmp $user_dir/tmp
+
+echo "Project $project_name " > $backup_dir/README.md
+cp $backup_dir/README.md $user_dir/README.md
+
+chmod -R 774 $backup_dir $nobackup_dir $user_dir
+echo "Your project folder is $user_dir"
