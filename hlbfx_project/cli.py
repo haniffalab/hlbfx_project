@@ -14,6 +14,7 @@ os.environ['HLBFX_LUSTRE_DIR'] = "/lustre/scratch126/cellgen/haniffa/projects/"
 os.environ['HLBFX_USER_DIR'] = f"/nfs/team298/{os.environ['USER']}/projects"
 SCRIPT_DIR = Path(__file__).parent/"scripts"
 
+
 class Project:
     
     def help(self):
