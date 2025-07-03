@@ -17,11 +17,11 @@ SCRIPT_DIR = Path(__file__).parent/"scripts"
 
 class Project:
     
-    def help(self):
-        """Manually show help"""
-        display = Display()
-        help_str = display.GetFormatHelp(Project)
-        print(help_str, file=sys.stderr)
+    #def help(self):
+    #    """Manually show help"""
+    #    display = Display()
+    #    help_str = display.GetFormatHelp(Project)
+    #    print(help_str, file=sys.stderr)
 
 
     def ls(self):
