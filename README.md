@@ -10,7 +10,7 @@ A CLI using to manage Haniffa Lab Bioinformatics projects.
 ```bash
 echo "
 # hlbfx-project
-export PYTHONPATH=$PYTHONPATH:/software/cellgen/team298/shared/deploy/:/software/cellgen/team298/shared/deploy/lib/python3.12/site-packages/
+export PYTHONPATH=\$PYTHONPATH:/software/cellgen/team298/shared/deploy/:/software/cellgen/team298/shared/deploy/lib/python3.12/site-packages/
 export PATH=/software/cellgen/team298/shared/deploy/bin/:\$PATH
 " >> ~/.bashrc
 source ~/.bashrc
