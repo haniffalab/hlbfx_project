@@ -23,19 +23,19 @@ pip install git+https://github.com/haniffalab/hlbfx_project.git
 ## Usage
 
 ```bash
-hlbfx_project --help
+hlbfx-projects --help
 ```
 ### Find if your project is already created
 ```bash
-hlbfx_project ls
+hlbfx-projects ls
 ```
 ### If project does not exist
 ```bash
-hlbfx_project create <project_name> 
+hlbfx-projects create <project_name> 
 ```
 ### If project exists
 ```bash
-hlbfx_project add <project_name>
+hlbfx-projects add <project_name>
 ```
 
 ## Where to find the project
