@@ -6,7 +6,7 @@ from fire.core import Display
 import pydoc
 
 import inspect
-print(inspect.__file__)
+#print(inspect.__file__)
 # Disable pager globally
 #pydoc.pager = print
 
