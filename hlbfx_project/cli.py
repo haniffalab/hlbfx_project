@@ -12,7 +12,7 @@ print(inspect.__file__)
 
 
 os.environ['HLBFX_NFS_DIR'] = "/nfs/team298/projects"
-os.environ['HLBFX_LUSTRE_DIR'] = "/lustre/scratch126/cellgen/haniffa/projects/"
+os.environ['HLBFX_LUSTRE_DIR'] = "/lustre/scratch124/cellgen/haniffa/projects/"
 os.environ['HLBFX_USER_DIR'] = f"/nfs/team298/{os.environ['USER']}/projects"
 SCRIPT_DIR = Path(__file__).parent/"scripts"
 
