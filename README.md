@@ -6,10 +6,20 @@ A CLI using to manage Haniffa Lab Bioinformatics projects.
 * Only proceed if you are familiar with using the command line, git, and python based installations. 
 
 ## Installation
-
+### Usage within farm - No installation needed
+```bash
+echo "
+# hlbfx-project
+export PYTHONPATH=/software/cellgen/team298/shared/hlbfx_project/:\$PYTHONPATH
+export PATH=/software/cellgen/team298/shared/hlbfx_project/bin/:\$PATH
+" >> ~/.bashrc
+source ~/.bashrc
+```
+### Usage outside farm - Install using pip
 ```bash
 pip install git+https://github.com/haniffalab/hlbfx_project.git
-``` 
+```
+
 ## Usage
 
 ```bash
