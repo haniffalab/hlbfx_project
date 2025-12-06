@@ -10,14 +10,28 @@ A CLI using to manage Haniffa Lab Bioinformatics projects.
 ```bash
 echo "
 # hlbfx-project
-export PYTHONPATH=\$PYTHONPATH:/software/cellgen/team298/shared/deploy/:/software/cellgen/team298/shared/deploy/lib/python3.12/site-packages/
-export PATH=/software/cellgen/team298/shared/deploy/bin/:\$PATH
+export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:$PATH
 " >> ~/.bashrc
 source ~/.bashrc
 ```
-### Usage outside farm - Install using pip
+### Usage outside farm - Install using conda and pip
 ```bash
-pip install git+https://github.com/haniffalab/hlbfx_project.git
+# Create conda environment per user
+conda create -n hlbfx-projects python=3.12 -y
+conda activate hlbfx-projects
+# Install hlbfx-projects in a common dir for all users
+conda create -p /software/cellgen/team298/shared/hlbfx-projects python=3.12 -y
+conda activate /software/cellgen/team298/shared/hlbfx-projects
+# Install hlbfx-projects in the conda env
+git clone git@github.com:haniffalab/hlbfx_project.git
+cd hlbfx_project
+pip install -e .
+# Add hlbfx-projects to your PATH
+echo "
+# hlbfx-project
+export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:$PATH
+" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ## Usage
