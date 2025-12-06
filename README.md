@@ -14,7 +14,7 @@ export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:$PATH
 " >> ~/.bashrc
 source ~/.bashrc
 ```
-### Usage outside farm - Install using pip
+### Usage outside farm - Install using conda and pip
 ```bash
 # Create conda environment per user
 conda create -n hlbfx-projects python=3.12 -y
