@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "cli tool for managing HL projects"
 authors = [{name = "Vijay", email = "vm11@sanger.ac.uk"}]
 dependencies = [
-    "fire",
+    "fire", "jupytext", "pre-commit"
 ]
 
 [project.scripts]
