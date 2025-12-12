@@ -7,10 +7,12 @@ A CLI using to manage Haniffa Lab Bioinformatics projects.
 
 ## Installation
 ### Usage within farm - No installation needed
+Bug: If you have been using hlbfx-projects before 12/12/2025 please go to your `~/.bashrc` file and remove any previous `hlbfx-projects` PATH additions to avoid conflicts.
+
 ```bash
 echo "
 # hlbfx-project
-export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:$PATH
+export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:\$PATH
 " >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -29,7 +31,7 @@ pip install -e .
 # Add hlbfx-projects to your PATH
 echo "
 # hlbfx-project
-export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:$PATH
+export PATH=/software/cellgen/team298/shared/hlbfx-projects/bin/:\$PATH
 " >> ~/.bashrc
 source ~/.bashrc
 ```
