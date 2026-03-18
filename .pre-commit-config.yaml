@@ -1,0 +1,7 @@
+repos:
+  - repo: https://github.com/mwouts/jupytext
+    rev: v1.16.1  # use the latest stable release
+    hooks:
+      - id: jupytext
+        args: ["--sync"]
+        files: \.ipynb$
