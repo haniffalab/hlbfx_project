@@ -54,6 +54,20 @@ hlbfx-projects create <project_name>
 hlbfx-projects add <project_name>
 ```
 
+## Troubleshooting script path issues
+If you see an error where `add.sh`/`create.sh`/`ls.sh` cannot be found from site-packages, point the CLI to the scripts directory explicitly:
+
+```bash
+export HLBFX_PROJECT_SCRIPTS_DIR=/path/to/hlbfx_project/scripts
+hlbfx-projects add <project_name>
+```
+
+Example for this repository clone:
+
+```bash
+export HLBFX_PROJECT_SCRIPTS_DIR=$PWD/hlbfx_project/scripts
+```
+
 ## Where to find the project
 Your projects will be in the nfs team directory `/nfs/team298/USERNAME/projects/`. Change `USERNAME` to your username and `<project_name>` to the name of your project.
 ```bash
