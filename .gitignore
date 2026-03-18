@@ -1,0 +1,7 @@
+hlbfx_project.egg-info
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+venv
