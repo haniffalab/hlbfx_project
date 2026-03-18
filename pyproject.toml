@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "hlbfx-project"
 version = "0.1.0"
@@ -5,10 +9,14 @@ description = "cli tool for managing HL projects"
 authors = [{name = "Vijay", email = "vm11@sanger.ac.uk"}]
 dependencies = [
     "fire",
+    "ipython<9",
     "jupytext",
     "pre-commit"
 ]
 
 [project.scripts]
 hlbfx-projects = "hlbfx_project.cli:main"
+
+[tool.setuptools.package-data]
+hlbfx_project = ["scripts/*.sh", "scripts/project_make", "scripts/utils.sh"]
 
